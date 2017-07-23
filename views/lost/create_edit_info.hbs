@@ -1,0 +1,101 @@
+<div>
+	<div class='container'>
+		<div class='row'>
+			<div class='col-xs-12'>
+				
+				{{#if errors}}
+				<div class="alert alert-danger">{{errors}}</div>
+				{{/if}}
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#">Dog info</a></li>
+					<li><a href="/lost/edit_photos?id={{id}}">Photos</a></li>
+					<li><a href="/lost/edit_contact?id={{id}}">Contact</a></li>
+				</ul>
+				<br>
+				<form action="/lost/create" method="post">
+					<input type="hidden" name="_csrf" value="{{csrf}}"/>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="lost_date">Lost Date*</label>
+								<input type="text" id="lost_date" name="lost_date" value="{{m.lost_date}}" class='form-control' placeholder='Lost Date' />
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="zipcode">Zipcode*</label>
+								<input type="text" id="zipcode" name="zipcode" value="{{m.zipcode}}" class='form-control' placeholder='Zipcode' />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-9">
+							<div class="form-group">
+								<label for="location">Lost Location</label>
+								<input type="text" id="location" name="location" value="{{m.location}}" class='form-control' placeholder='Lost location' />
+							</div>
+						</div>
+						
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-4">
+							<div class="form-group">
+								<label for="breed">Breed*</label>
+								<select id="breed" name="breed" class="form-control">
+									<option value="volvo">Volvo</option>
+									<option value="saab">Saab</option>
+									<option value="fiat">Fiat</option>
+									<option value="other">Other</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-4">
+							<div class="form-group">
+								<label for="color">Color*</label>
+								<select id="color" name="color" class="form-control">
+									<option value="yellow">Yellow</option>
+									<option value="black">Black</option>
+									<option value="white">White</option>
+									<option value="other">Other</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-4">
+							<div class="form-group">
+								<label for="size">Size*</label>
+								<select id="size" name="size" class="form-control">
+									<option value="small">Small</option>
+									<option value="medium">Medium</option>
+									<option value="big">Big</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="description">Description</label>
+								
+								<textarea id="description" name="description"  class='form-control' placeholder='description' row="3">{{m.description}}</textarea>
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group text-right">
+								<button type="submit" class="btn btn-primary">Next</button>
+							</div>
+						</div>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<br/><br/>
+{{#contentFor "footerScripts"}}
+{{/contentFor}}
