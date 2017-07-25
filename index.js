@@ -1,5 +1,9 @@
 const Koa = require('koa');
+
+const send = require('koa-send');
+const serve = require('koa-static');
 const router = require('./router');
+
 const hbs = require('koa-hbs');
 const bodyParser = require('koa-bodyparser');
 const session = require('koa-session');
@@ -45,8 +49,10 @@ app.use(hbs.middleware({
   disableCache: true
 }));
 
+
 app.use(router.publicRouter.middleware());
 app.use(router.securedRouter.middleware());
+app.use(serve(__dirname + '/public'));
 
 mongoose.connect(configs.dbUrl, { /*config: { autoIndex: false }*/ });
 
