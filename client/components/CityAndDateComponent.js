@@ -137,10 +137,11 @@ class CityAndDateComponent extends React.Component {
 
   getPlaceFromUrl(){
     const arr = window.location.pathname.toLowerCase().substring(1).split('/');
+    //alert(window.location.pathname.toLowerCase().substring(1));
     // ex: china/anhui/wuwei
-    if(arr.length == 2)
+    if(arr.length == 3)
       return {country: arr[1], state: arr[2], city: arr[3]};
-    else if(arr.length == 3)
+    else if(arr.length == 4)
       return {country: arr[1], state: arr[2], city: arr[2]};
     else
       return {};

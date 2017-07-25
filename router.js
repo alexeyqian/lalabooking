@@ -38,8 +38,11 @@ publicRouter
         successRedirect: '/app',
         failureRedirect: '/'
     }))
-    .get('/search', SearchController.index)
-    .get('/searchbymap', SearchByMapController.index);
+    .get('/search/:country/:city', SearchController.index)
+    .get('/search/:country/:state/:city', SearchController.index)
+    
+    .get('/searchbymap/:country/:city', SearchByMapController.index)
+    .get('/searchbymap/:country/:state/:city', SearchByMapController.index);
 
 // Secured routes
 const securedRouter = new Router();
