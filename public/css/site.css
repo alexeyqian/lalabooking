@@ -259,6 +259,38 @@ h3#home-slogon {
 }
 
 /* Search Page Styles*/
+.hotelItem{
+  position: relative;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-bottom: solid 1px #eee;
+}
+
+.hotelItem .facility{
+  margin-bottom: 5px;
+}
+
+.hotelItem .price{
+  position: absolute;
+  bottom: 0px;
+  right: 5px;
+  font-size: 24px;
+  color: green;
+
+}
+
+ul.hotelList {
+    list-style: none;
+    padding: 0;
+}
+.hotelList img {
+    width: 100%;
+}
+
+.hotelList span {
+    margin-right: 10px;
+}
+
 .cityAndDate{
   border: solid 1px grey;
   padding: 10px;
