@@ -6,10 +6,15 @@ class HotelListComponent extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    //alert('component did mount');
+    const setHotelImageHeight = window.setHotelImageHeight;
+    setHotelImageHeight();
+  }
+
   render() {
 
-    const hotels = this.props.hotels;
-    const listItems = hotels.map((hotel) =>
+    const listItems = this.props.hotels.map((hotel) =>
       <li key={hotel.id}><HotelItemComponent hotel={hotel} /></li>
     );
 

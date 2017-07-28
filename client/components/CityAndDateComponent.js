@@ -204,7 +204,7 @@ class CityAndDateComponent extends React.Component {
   }
 
   render() {
-
+    const nights = this.state.checkout.diff(this.state.checkin, 'days');
     return (
 
       <div>
@@ -212,17 +212,18 @@ class CityAndDateComponent extends React.Component {
         <div onClick={this.open} className="cityAndDate">
 
           <div className="margin-bottom-5 h4">
-            <span className="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;
+            <span className="glyphicon glyphicon-search" aria-hidden="true"></span>
             <span className="capitalize">{this.state.city}</span>
           </div>
 
           <div className="">
-            <span className="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;
-            {this.state.checkin.format('MMM DD')} - {this.state.checkout.format('MMM DD')}&nbsp;
-            <span className="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;
-            <span>{this.state.adults} adults</span>&nbsp;
-            <span className={this.state.children?'':'hidden'}>{this.state.children} children</span>&nbsp;
-            <span className="label label-default">Edit</span>
+            <span className="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+            <span className='margin-right-5'>{this.state.checkin.format('MMM DD')} - {this.state.checkout.format('MMM DD')}</span>
+            <span className='margin-right-5'>({nights} nights)</span>
+            <span className="glyphicon glyphicon-user" aria-hidden="true"></span>
+            <span className='margin-right-5'>{this.state.adults} adults</span>
+            <span className={this.state.children?'':'hidden'}>{this.state.children} children</span>
+            <span className="label label-default margin-left-5">Edit</span>
           </div>
 
         </div>

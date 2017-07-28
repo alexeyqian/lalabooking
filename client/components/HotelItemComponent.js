@@ -4,7 +4,6 @@ import moment from 'moment';
 class HotelItemComponent extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   render() {
@@ -13,7 +12,7 @@ class HotelItemComponent extends React.Component {
 
       <div id={'hotel_'+hotel.id} className="hotelItem">
 
-        <img src={hotel.photo} />
+        <img className='hotelImage' src={hotel.photo} />
         <h4>{hotel.name}</h4>
 
         <div>

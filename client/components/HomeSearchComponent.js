@@ -1,18 +1,31 @@
 import React from 'react';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
+import Cookies from 'js-cookie';
+
 class HomeSearchComponent extends React.Component {
   constructor(props) {
     super(props);
 
-    const today = new moment();
-    const tomorrow = moment().add(1, 'days');
+    let checkin = new moment();
+    let checkout = moment().add(1, 'days');
+    let adults = 2;
+    let children = 0;
+
+    if(Cookies.get('checkin'))
+      checkin = moment(Cookies.get('checkin'));
+    if(Cookies.get('checkout'))
+      checkout = moment(Cookies.get('checkout'));
+    if(Cookies.get('adults'))
+      adults = Cookies.get('adults');
+    if(Cookies.get('children'))
+      children = Cookies.get('children');
 
     this.state = {
-      checkin: today,
-      checkout: tomorrow,
-      adults: 2,
-      children: 0
+      checkin: checkin,
+      checkout: checkout,
+      adults: adults,
+      children: children
     };
 
     this.handleChangeCheckin = this.handleChangeCheckin.bind(this);
@@ -53,12 +66,17 @@ class HomeSearchComponent extends React.Component {
   handleSubmit(event) {
     //alert(`destination: ${this.destination.value}, sleeps: ${this.state.sleeps}, isTripping: ${this.state.isTripping}, checkin: ${this.state.startDate.format('YYYY-MM-DD')}, checkout: ${this.state.endDate.format('YYYY-MM-DD')}`);
     //event.preventDefault();
+    Cookies.set('destination', this.destination.value, { expires: 7 });
+    Cookies.set('checkin', this.state.checkin, { expires: 1 });
+    Cookies.set('checkout', this.state.checkout, { expires: 1 });
+    Cookies.set('adults', this.state.adults, { expires: 7 });
+    Cookies.set('children', this.state.children, { expires: 7 });
 
     const addressUrl = this.getAddressUrlFromString(this.destination.value);
     var parameters = this.getQueryParameters(this.state);
     var url = window.location.protocol + '//' + window.location.host + '/search/' + addressUrl + parameters;
-    alert(url);
-    //window.location.href = url;
+    //alert(url);
+    window.location.href = url;
   }
 
   getQueryParameters(s) {
@@ -167,13 +185,16 @@ class HomeSearchComponent extends React.Component {
   }
 
   render() {
+    let defaultDestination = '';
+    if(Cookies.get('destination'))
+      defaultDestination = Cookies.get('destination');
 
     return (
       <div className="form text-left">
 
         <div className="col-xs-12 col-md-3 form-group">
             <label htmlFor="destination">Destination</label>
-            <input type="text" className="form-control" id="destination" name="destination" ref={(input) => this.destination = input} placeholder="Where to?" tabIndex="3"/>
+            <input type="text" className="form-control" id="destination" name="destination" ref={(input) => this.destination = input} defaultValue={defaultDestination} placeholder="Where to?" tabIndex="3"/>
         </div>
 
         <div className="col-xs-12 col-sm-6 col-md-3 form-group">

@@ -291,6 +291,10 @@ ul.hotelList {
     margin-right: 10px;
 }
 
+.hotelList i {
+    margin-right: 5px;
+}
+
 .cityAndDate{
   border: solid 1px grey;
   padding: 10px;
