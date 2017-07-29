@@ -8,6 +8,7 @@ var config = {
     entry: {
         home: [APP_DIR + '/HomeContainer.js'],
         search: [APP_DIR + '/SearchContainer.js'],
+        hotel: [APP_DIR + '/HotelContainer.js'],
         //search: [APP_DIR + '/CityAndDate.js', APP_DIR + '/FilterButtonMobileContainer.js'],
 
         //adminDashboard: [APP_DIR + '/AdminRLEmailLeadInfoContainer.jsx']

@@ -1,6 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import CityAndDateComponent from './components/CityAndDateComponent';
+import MapAndFilterButtonsComponent from './components/MapAndFilterButtonsComponent';
 import HotelListComponent from './components/HotelListComponent';
 
 const hotels = [
@@ -25,4 +26,5 @@ const hotels = [
 ];
 
 render(<CityAndDateComponent/>, document.getElementById('cityAndDateComponent'));
+render(<MapAndFilterButtonsComponent/>, document.getElementById('mapAndFilterButtonsComponent'));
 render(<HotelListComponent hotels={hotels}/>, document.getElementById('hotelListComponent'));
