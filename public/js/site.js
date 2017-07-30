@@ -1,4 +1,14 @@
-﻿String.prototype.format = String.prototype.f = function () {
+
+function initShortFullBlock(){
+  $('.short-block, .full-block, short-full-block-arrow').click(function(){
+    $(this).parent().toggleClass('active');
+    $(this).toggleClass('hidden');
+    $(this).siblings().removeClass('hidden');
+  });
+}
+
+
+String.prototype.format = String.prototype.f = function () {
     var s = this,
         i = arguments.length;
 
@@ -96,7 +106,7 @@ function showWorkingOnIt() {
     $('#top-messages-bar').append(working);
 }
 
-function hideWorkingOnIt() {   
+function hideWorkingOnIt() {
     $('#top-messages-bar').remove('#main-working-on-it');
 }
 
@@ -141,7 +151,7 @@ function parseGeoCoding(place) {
                 stateShortName = geos[i].short_name;
                 break;
             case "postal_code":
-                zipcode = geos[i].long_name;                
+                zipcode = geos[i].long_name;
                 break;
             case "country":
                 country = geos[i].long_name;
@@ -151,14 +161,14 @@ function parseGeoCoding(place) {
                 //console.log("Sorry, we are out of " + expr + ".");
         }
     }
-    
+
     return {
         "latitude": lat, "longitude": lng,
         "streetNumber": streetNumber, "street": street, "neighborhood": neighborhood,
         "city": city, "cityShortName": cityShortName, "county": county,
-        "state": state, "stateShortName": stateShortName, "zipcode": zipcode, 
+        "state": state, "stateShortName": stateShortName, "zipcode": zipcode,
         "country": country, "countryShortName":countryShortName
-    };    
+    };
 }
 
 function saveGeoData(myGeoData) {
@@ -173,12 +183,12 @@ function saveGeoData(myGeoData) {
 
 function getGeoDataFromLocal(input, cachedData) {
     var lat, lng, city, state, country, stateShortName;
-    
+
     var arr = input.split(',');
     var length = arr.length;
     if (length >= 3) {
-        country = arr[length - 1].trim();        
-        //stateShortName = arr[length - 2].trim().replace(/[0-9]/g, ''); // in case there are zipcode inside the input        
+        country = arr[length - 1].trim();
+        //stateShortName = arr[length - 2].trim().replace(/[0-9]/g, ''); // in case there are zipcode inside the input
         stateShortName = arr[length - 2].trim();
         city = arr[length - 3].trim();
 
@@ -208,7 +218,7 @@ function getGeoDataFromLocal(input, cachedData) {
                     state = item.State;
                     break;
                 }
-            }            
+            }
         }
     }
 
@@ -235,7 +245,7 @@ function getAddressUrlFromGeoData(myGeoData) {
 function getAddressUrlFromString(destination)
 {
     var city, state, country;
-    
+
     var arr = destination.replace('-', ',').split(',');
     var length = arr.length;
     if (length <= 0)
@@ -244,10 +254,10 @@ function getAddressUrlFromString(destination)
     if (length >= 1)
         country = arr[length - 1].trim();
     if (length >= 2)
-        state = arr[length - 2].trim().replace(/[0-9]/g, '').trim(); // in case there are zipcode inside the input        
+        state = arr[length - 2].trim().replace(/[0-9]/g, '').trim(); // in case there are zipcode inside the input
     if (length >= 3)
         city = arr[length - 3].trim();
-    
+
     var addressUrl = '';
     if (country)
         addressUrl = country + "/";

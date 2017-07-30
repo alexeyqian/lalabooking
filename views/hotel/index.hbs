@@ -9,8 +9,17 @@
 
 <div>{{hotel.description}}</div>
 
+<div class="short-full-block">
+  <div class="short-block">short text</div>
+  <div class="full-block hidden">full text</div>
+</div>
+
 {{#contentFor "footerScripts"}}
 
 <script src="/js/hotel.js"></script>
-
+<script>
+$(function(){
+  initShortFullBlock();
+});
+</script>
 {{/contentFor}}

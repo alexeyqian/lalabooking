@@ -14,7 +14,7 @@ class CityAndDateComponent extends React.Component {
     const initCheckout = urlVars['checkout']?moment(urlVars['checkout'], "YYYY-MM-DD") : moment().add(1, 'days');
     const initAdults = urlVars['adults'] || '';
     const initChildren = urlVars['children'] || '';
-
+    //console.log('initCheckout: ' + initCheckout.format('YYYY-MM-DD'));
     this.prevStateX = {
         showModal: false,
         country: place.country,
