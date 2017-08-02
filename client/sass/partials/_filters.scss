@@ -1,0 +1,14 @@
+.filter-stars span{
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+}
+
+.filter-stars .inactive{
+  background-color: #eee;
+}
+
+.filter-stars .active{
+  background-color: green;
+  color: white;
+}

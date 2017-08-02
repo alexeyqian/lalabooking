@@ -120,6 +120,18 @@ textarea {
   -ms-transform: rotate(270deg);
   transform: rotate(270deg); }
 
+.filter-stars span {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px; }
+
+.filter-stars .inactive {
+  background-color: #eee; }
+
+.filter-stars .active {
+  background-color: green;
+  color: white; }
+
 /* Common Styles*/
 .fixed {
   position: fixed;

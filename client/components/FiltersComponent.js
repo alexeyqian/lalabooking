@@ -1,11 +1,14 @@
 import React from 'react';
 
+import FilterStarsComponent from './FilterStarsComponent';
+
 class FiltersComponent extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
+    let currentFilter = <FilterStarsComponent />;
 
     return (
 
@@ -22,9 +25,16 @@ class FiltersComponent extends React.Component {
             </ul>
           </div>
           <div className='col-xs-8'>
+            {currentFilter}
+          </div>
 
+          <div className='col-xs-12'>
+            <button className='btn btn-Primary'>Apply</button>
+            <button className='btn btn-default'>Cancel</button>
           </div>
         </div>
+
+
 
       </div>
 
