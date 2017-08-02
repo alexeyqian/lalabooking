@@ -10,6 +10,7 @@ var config = {
         home: [APP_DIR + '/HomeContainer.js'],
         search: [APP_DIR + '/SearchContainer.js'],
         hotel: [APP_DIR + '/HotelContainer.js'],
+        test: [APP_DIR + '/TestContainer.js'],
         //search: [APP_DIR + '/CityAndDate.js', APP_DIR + '/FilterButtonMobileContainer.js']
     },
     output: {

@@ -1,0 +1,216 @@
+<div className="">
+  <div>
+    <h5>Your Budget</h5>
+    <div>Budget slider here</div>
+  </div>
+
+  <div>
+    <h5>Star Rating</h5>
+    <div>
+      <ol>
+        <li>
+          <label>
+            1 star
+            <input name="star1" type="checkbox"
+              checked={this.state.isIncludeStar1}
+              onChange={this.handleInputChange} />
+          </label>
+        </li>
+        <li>
+          <label>
+            2 star
+            <input name="star2" type="checkbox"
+              checked={this.state.isIncludeStar2}
+              onChange={this.handleInputChange} />
+          </label>
+        </li>
+        <li>
+          <label>
+            3 star
+            <input name="star3" type="checkbox"
+              checked={this.state.isIncludeStar3}
+              onChange={this.handleInputChange} />
+          </label>
+        </li>
+        <li>
+          <label>
+            4 star
+            <input name="star4" type="checkbox"
+              checked={this.state.isIncludeStar4}
+              onChange={this.handleInputChange} />
+          </label>
+        </li>
+        <li>
+          <label>
+            5 star
+            <input name="star5" type="checkbox"
+              checked={this.state.isIncludeStar5}
+              onChange={this.handleInputChange} />
+          </label>
+        </li>
+        <li>
+          <label>
+            Unrated
+            <input name="unstarted" type="checkbox"
+              checked={this.state.isIncludeUnstared}
+              onChange={this.handleInputChange} />
+          </label>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div>
+    <h5>Availability</h5>
+    <div>
+      <label>
+        Exclude sold-out properties
+        <input name="excludeSoldOut" type="checkbox"
+          checked={this.state.isExcludeSoldOut}
+          onChange={this.handleInputChange} />
+      </label>
+    </div>
+  </div>
+
+  <div>
+    <h5>24-Hour Front Desk</h5>
+    <div>
+      <label>
+        Front Desk Open 24/7
+        <input name="frontdesk24and7" type="checkbox"
+          checked={this.state.isFrontDesk24And7}
+          onChange={this.handleInputChange} />
+      </label>
+    </div>
+  </div>
+
+  <div>
+    <h5>Free Cancellation & More</h5>
+    <div>
+      <ul>
+        <li>
+          <label>
+            Free cancellation
+            <input name="freeCancellation" type="checkbox"
+              checked={this.state.isFreeCancellation}
+              onChange={this.handleInputChange} />
+          </label>
+        </li>
+        <li>
+          <label>
+            Book without credit card
+            <input name="bookWithoutCreditCard" type="checkbox"
+              checked={this.state.isBookWithoutCreditCard}
+              onChange={this.handleInputChange} />
+          </label>
+        </li>
+        <li>
+          <label>
+            No prepayment
+            <input name="noPrepayment" type="checkbox"
+              checked={this.state.isNoPrePayment}
+              onChange={this.handleInputChange} />
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <h5>Meals</h5>
+    <div>
+      <ul>
+        <li>
+          <label>
+            Breakfast included
+            <input name="breakfastIncluded" type="checkbox"
+              checked={this.state.isBreakfastIncluded}
+              onChange={this.handleInputChange} />
+          </label>
+        </li>
+        <li>
+          <label>
+            Kitch facilities
+            <input name="kitchFacilities" type="checkbox"
+              checked={this.state.isIncludeKitchFacilities}
+              onChange={this.handleInputChange} />
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <h5>Bed Preference</h5>
+    <div>
+      <ul>
+        <li>
+          <label>
+            Twin beds
+            <input name="twinBeds" type="checkbox"
+              checked={this.state.isTwinBeds}
+              onChange={this.handleInputChange} />
+          </label>
+        </li>
+        <li>
+          <label>
+            Double beds
+            <input name="doubleBeds" type="checkbox"
+              checked={this.state.isDoubleBeds}
+              onChange={this.handleInputChange} />
+          </label>
+        </li>
+        <li>
+          <label>
+            Crib upon request
+            <input name="cribUponRequest" type="checkbox"
+              checked={this.state.isCribUponRequest}
+              onChange={this.handleInputChange} />
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <h5>Review Score</h5>
+    <div>
+      <div>Score slider here</div>
+    </div>
+  </div>
+
+  <div>
+    <h5>Facility</h5>
+    <div>
+      <ul>
+        <li>
+          <label>
+            On-site Parking - for loop here
+            <input name="twinBeds" type="checkbox"
+              checked={this.state.isTwinBeds}
+              onChange={this.handleInputChange} />
+          </label>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <h5>Room Facility</h5>
+    <div>
+      <ul>
+        <li>
+          <label>
+            Air conditioning - for loop here
+            <input name="twinBeds" type="checkbox"
+              checked={this.state.isTwinBeds}
+              onChange={this.handleInputChange} />
+          </label>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+</div>

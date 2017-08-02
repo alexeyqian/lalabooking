@@ -5,6 +5,7 @@ const AccountController = require('./controllers/AccountController');
 const SearchController = require('./controllers/SearchController');
 const SearchByMapController = require('./controllers/SearchByMapController');
 const HotelController = require('./controllers/HotelController');
+const TestController = require('./controllers/TestController');
 
 const auth = passport.authenticate('local', {
     successRedirect: '/account',
@@ -44,7 +45,8 @@ publicRouter
 
     .get('/searchbymap/:country/:city', SearchByMapController.index)
     .get('/searchbymap/:country/:state/:city', SearchByMapController.index)
-    .get('/hotel/:id', HotelController.index);
+    .get('/hotel/:id', HotelController.index)
+    .get('/test', TestController.index);
 
 // Secured routes
 const securedRouter = new Router();
