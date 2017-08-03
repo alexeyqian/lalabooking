@@ -5,6 +5,11 @@
 @import "filters";
 
 /* Common Styles*/
+* {
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
 
 .fixed {
     position: fixed;

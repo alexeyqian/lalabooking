@@ -1,40 +1,61 @@
 import React from 'react';
 
 import FilterStarsComponent from './FilterStarsComponent';
+import FilterBrandsComponent from './FilterBrandsComponent';
 
 class FiltersComponent extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {currentTab: 'priceRangeTab'};
+  }
+
+  selectTab(tab){
+    this.setState({currentTab: tab});
   }
 
   render() {
     let currentFilter = <FilterStarsComponent />;
+    switch (this.state.currentTab) {
+      case 'brandsTab':
+        currentFilter = <FilterBrandsComponent />
+        break;
+      default:
+        currentFilter = <FilterStarsComponent />;
+        break;
+    }
 
     return (
 
-      <div className='filterPanel container'>
-        <div className='row'>
-          <div className='col-xs-4'>
-            <ul className="nav nav-stacked">
-              <li className="active"><a href="#">Price</a></li>
-              <li><a href="#">Stars</a></li>
-              <li><a href="#">Brands</a></li>
-              <li><a href="#">Themes</a></li>
-              <li><a href="#">Facilities</a></li>
-              <li><a href="#">Policies</a></li>
+      <div className='filters-panel'>
+
+        <div className="header text-right">
+          <span className='h4'>x</span>
+        </div>
+
+        <div className="clearfix">
+
+          <div className="column menu">
+            <ul>
+              <li onClick={()=>this.selectTab('priceRangeTab')} className={this.state.currentTab === 'priceRangeTab'? "active" : "inactive"}>Price</li>
+              <li onClick={()=>this.selectTab('starsTab')} className={this.state.currentTab === 'starsTab'? "active" : "inactive"}>Stars</li>
+              <li onClick={()=>this.selectTab('brandsTab')} className={this.state.currentTab === 'brandsTab'? "active" : "inactive"}>Brands</li>
+              <li onClick={()=>this.selectTab('themesTab')} className={this.state.currentTab === 'themesTab'? "active" : "inactive"}>Themes</li>
+              <li onClick={()=>this.selectTab('facilitiesTab')} className={this.state.currentTab === 'facilitiesTab'? "active" : "inactive"}>Facilities</li>
+              <li onClick={()=>this.selectTab('policiesTab')} className={this.state.currentTab === 'policiesTab'? "active" : "inactive"}>Policies</li>
             </ul>
           </div>
-          <div className='col-xs-8'>
+
+          <div className="column content">
             {currentFilter}
           </div>
 
-          <div className='col-xs-12'>
-            <button className='btn btn-Primary'>Apply</button>
-            <button className='btn btn-default'>Cancel</button>
-          </div>
         </div>
 
-
+        <div className="footer text-right">
+          <button className='btn btn-default'>Cancel</button>
+          <button className='btn btn-primary'>Apply</button>
+        </div>
 
       </div>
 
