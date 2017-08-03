@@ -1,7 +1,9 @@
 import React from 'react';
 
+import FilterPriceRangeComponent from './FilterPriceRangeComponent';
 import FilterStarsComponent from './FilterStarsComponent';
 import FilterBrandsComponent from './FilterBrandsComponent';
+import FilterThemesComponent from './FilterThemesComponent';
 
 class FiltersComponent extends React.Component {
   constructor(props) {
@@ -15,13 +17,19 @@ class FiltersComponent extends React.Component {
   }
 
   render() {
-    let currentFilter = <FilterStarsComponent />;
+    let currentFilter = <FilterPriceRangeComponent />;
     switch (this.state.currentTab) {
+      case 'starsTab':
+        currentFilter = <FilterStarsComponent />
+        break;
       case 'brandsTab':
         currentFilter = <FilterBrandsComponent />
         break;
+      case 'themesTab':
+        currentFilter = <FilterThemesComponent />
+        break;
       default:
-        currentFilter = <FilterStarsComponent />;
+        currentFilter = <FilterPriceRangeComponent />;
         break;
     }
 

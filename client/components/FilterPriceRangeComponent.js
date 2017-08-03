@@ -1,6 +1,6 @@
 import React from 'react';
 
-class FilterBrandsComponent extends React.Component {
+class FilterPriceRangeComponent extends React.Component {
   constructor(props) {
     super(props);
 
@@ -9,17 +9,7 @@ class FilterBrandsComponent extends React.Component {
   }
 
   toggleSelection(item){
-
-    let tempSelectedItems = this.state.selectedItems.slice();
-
-    const index = tempSelectedItems.indexOf(item);
-
-    if(index >= 0)
-      tempSelectedItems.splice(index, 1);
-    else
-      tempSelectedItems.push(item);
-
-    this.setState({selectedItems: tempSelectedItems});
+    this.setState({selectedItems: item});
   }
 
   isSelected(item){
@@ -28,10 +18,12 @@ class FilterBrandsComponent extends React.Component {
 
   render() {
     const items = [
-      {name: 'jing_jiang', display_name: 'Jing Jiang'},
-      {name: 'hilton', display_name: 'Hilton'},
-      {name: 'han_ting', display_name: 'Han Ting'},
-      {name: 'ru_jia', display_name: 'Ru Jia'},
+      {name: '0-100', display_name: '0 - 100'},
+      {name: '100-200', display_name: '100 - 200'},
+      {name: '200-300', display_name: '200 - 300'},
+      {name: '300-400', display_name: '300 - 400'},
+      {name: '400-500', display_name: '400 - 500'},
+      {name: '500-9999', display_name: '500 +'},
     ];
 
     const itemComponents = items.map((item) =>
@@ -50,4 +42,4 @@ class FilterBrandsComponent extends React.Component {
     );
   }
 }
-export default FilterBrandsComponent;
+export default FilterPriceRangeComponent;

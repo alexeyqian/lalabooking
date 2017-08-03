@@ -1,6 +1,6 @@
 import React from 'react';
 
-class FilterBrandsComponent extends React.Component {
+class FilterThemesComponent extends React.Component {
   constructor(props) {
     super(props);
 
@@ -28,10 +28,10 @@ class FilterBrandsComponent extends React.Component {
 
   render() {
     const items = [
-      {name: 'jing_jiang', display_name: 'Jing Jiang'},
-      {name: 'hilton', display_name: 'Hilton'},
-      {name: 'han_ting', display_name: 'Han Ting'},
-      {name: 'ru_jia', display_name: 'Ru Jia'},
+      {name: 'theme1', display_name: 'theme 1'},
+      {name: 'theme2', display_name: 'theme 2'},
+      {name: 'theme3', display_name: 'theme 3'},
+      {name: 'theme4', display_name: 'theme 4'},
     ];
 
     const itemComponents = items.map((item) =>
@@ -50,4 +50,4 @@ class FilterBrandsComponent extends React.Component {
     );
   }
 }
-export default FilterBrandsComponent;
+export default FilterThemesComponent;

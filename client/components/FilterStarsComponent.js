@@ -36,7 +36,7 @@ class FilterStarsComponent extends React.Component {
 
     return (
 
-      <div className='filter-stars'>
+      <div className='filter-items'>
 
         <span onClick={()=>this.toggleSelection(1)} className={this.isSelected(1)? "active" : "inactive"}>1 star</span>
         <span onClick={()=>this.toggleSelection(2)} className={this.isSelected(2)? "active" : "inactive"}>2 stars</span>
