@@ -171,6 +171,44 @@ textarea {
   background-color: green;
   color: white; }
 
+.hotel-room {
+  padding: 10px;
+  border-bottom: dotted 1px #e7e7e7; }
+
+.hotel-room-type {
+  background-color: #f8f8f8; }
+
+.hotel-room-type-wrapper {
+  border-bottom: solid 5px #e7e7e7; }
+
+.hotel-room-type-list, .hotel-room-list {
+  list-style: none;
+  margin: 0px;
+  padding: 0px; }
+  .hotel-room-type-list .column, .hotel-room-list .column {
+    float: left;
+    padding: 5px;
+    overflow: hidden; }
+  .hotel-room-type-list .clearfix::after, .hotel-room-list .clearfix::after {
+    content: "";
+    clear: both;
+    display: table; }
+  .hotel-room-type-list .left, .hotel-room-list .left {
+    width: 25%; }
+  .hotel-room-type-list .right, .hotel-room-list .right {
+    width: 75%; }
+  .hotel-room-type-list .name, .hotel-room-list .name {
+    font-size: 16px;
+    font-weight: bold; }
+  .hotel-room-type-list .price, .hotel-room-list .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: green;
+    margin-right: 10px; }
+  .hotel-room-type-list .facility, .hotel-room-list .facility {
+    padding: 5px;
+    margin-right: 5px; }
+
 /* Common Styles*/
 * {
   -webkit-border-radius: 0 !important;

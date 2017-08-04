@@ -10,14 +10,14 @@ class HotelRoomTypeListComponent extends React.Component {
   render() {
 
     const roomTypeComponentList = this.props.roomTypes.map((roomType) =>
-      <li key={roomType.id}>
+      <li key={roomType.id} className='hotel-room-type-wrapper'>
         <div><HotelRoomTypeComponent roomType={roomType} /></div>
         <HotelRoomListComponent rooms = {roomType.rooms} />
       </li>
     );
 
     return (
-      <ul className="room-type-list">{roomTypeComponentList}</ul>
+      <ul className="hotel-room-type-list">{roomTypeComponentList}</ul>
     );
   }
 }

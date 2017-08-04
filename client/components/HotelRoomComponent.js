@@ -11,31 +11,38 @@ class HotelRoomComponent extends React.Component {
     return (
 
       <div id={'room-'+room.id} className="hotel-room">
-        <h4>{room.name}</h4>
+        <div className='name'>{room.name}</div>
         <div>
-          <span className='label label-default'>
+          <i className='fa fa-coffee'></i>
+          <span className='facility'>
             {room.isIncludeBreakfast? 'Breakfast included' : 'Breakfast not included'}
           </span>
-          <span className='label label-default'>
-            {room.bed_type} {room.bed_number > 1? ' x ' + room.bed_number : ''}
+          <i className='fa fa-bed'></i>
+          <span className='facility'>
+            {room.bed_type} {room.bed_number > 1? 'x' + room.bed_number : ''}
           </span>
-          <span className='label label-default'>
-            fits: {room.fits} people
+          <i className='fa fa-users'></i>
+          <span className='facility'>
+            fits: {room.fits}
           </span>
         </div>
         <div>
-          <span className='label label-default'>
-            {room.isFreeCancellation? 'Free cancellation' : 'Not free cancellation'}
+          <i className='fa fa-money'></i>
+          <span className='facility'>
+            {room.isFreeCancellation? <span className='text-success'>Free cancellation</span> : <span className='text-danger'>Not free cancellation</span>}
           </span>
-          <span className='label label-default'>
+          <i className='fa fa-credit-card'></i>
+          <span className='facility'>
             {room.isPrepayment? 'Prepeyment' : 'Pay at hotel'}
           </span>
         </div>
 
         <div>{room.freeCancellationBefore? 'Free cancellation before: ' + room.freeCancellationBefore : ''} </div>
+        <div className='text-right'>
+          <span className="price">{room.currency_symbel}{room.price}</span>
+          <span className="book"><button className="btn btn-sm btn-warning">Book</button></span>
+        </div>
 
-        <div className="price">{room.currency}{room.price}</div>
-        <div className="booknow"><button className="btn btn-warning">Book Now</button></div>
 
       </div>
 
