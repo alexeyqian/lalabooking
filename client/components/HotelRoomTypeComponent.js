@@ -5,6 +5,10 @@ class HotelRoomTypeComponent extends React.Component {
     super(props);
   }
 
+  handleShowDetail(roomTypeId) {
+      this.props.onShowDetail(roomTypeId);
+  }
+
   render() {
 
     const roomType = this.props.roomType;
@@ -12,7 +16,7 @@ class HotelRoomTypeComponent extends React.Component {
 
       <div id={'room-type-'+roomType.id} className="hotel-room-type">
         <div className="clearfix">
-          <div className="column left">
+          <div className="column left" onClick={() => this.handleShowDetail(roomType.id)}>
             <img src={roomType.photo} width='100%' height='100%' />
           </div>
 
@@ -26,7 +30,7 @@ class HotelRoomTypeComponent extends React.Component {
                 {roomType.bed_type} {roomType.bed_number > 1 ? ' x ' + roomType.bed_number : ''}
               </span>
               <span className='facility'>
-                Floor: 2, 3, 15
+                Floors: 2, 3, 15
               </span>
             </div>
 
