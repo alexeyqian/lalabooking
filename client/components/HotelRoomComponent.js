@@ -5,13 +5,18 @@ class HotelRoomComponent extends React.Component {
     super(props);
   }
 
+  handleShowDetail(roomId) {
+      //alert('click room name: id: ' + roomId);
+      this.props.onShowDetail(roomId);
+  }
+
   render() {
 
     const room = this.props.room;
     return (
 
       <div id={'room-'+room.id} className="hotel-room">
-        <div className='name'>{room.name}</div>
+        <div className='name' onClick={() => this.handleShowDetail(room.id)}>{room.name}</div>
         <div>
           <i className='fa fa-coffee'></i>
           <span className='facility'>

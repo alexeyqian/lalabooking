@@ -3,6 +3,8 @@ import { Button, Modal } from 'react-bootstrap';
 
 import HotelRoomTypeComponent from './HotelRoomTypeComponent';
 import HotelRoomListComponent from './HotelRoomListComponent';
+import RoomTypeDetailComponent from './RoomTypeDetailComponent';
+import RoomDetailComponent from './RoomDetailComponent';
 
 class HotelRoomTypeListComponent extends React.Component {
   constructor(props) {
@@ -10,19 +12,17 @@ class HotelRoomTypeListComponent extends React.Component {
     this.state = {
       showModal:false,
       modalTitle: 'UNKNOWN',
+      modalType: '',
       currentRoomType: {},
       currentRoom: {}
     };
 
     //this.openModal = this.open.bind(this);
     this.openRoomTypeModal = this.openRoomTypeModal.bind(this);
+    this.openRoomModal = this.openRoomModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
   }
-
-  // openModal() {
-  //   this.setState({ showModal: true });
-  // }
 
   openRoomTypeModal(roomTypeId) {
 
@@ -31,24 +31,27 @@ class HotelRoomTypeListComponent extends React.Component {
       }
     let roomType = this.props.roomTypes.find(findRoomType);
     //alert(JSON.stringify(roomType));
-    this.setState({ showModal: true, currentRoomType: roomType, modalTitle: roomType.name });
+    this.setState({ showModal: true, currentRoomType: roomType, modalTitle: roomType.name, modalType: 'roomTypeDetail' });
   }
 
-  getRoomFromData(roomId)
+  getRoomFromData(roomData, roomId)
   {
-    this.props.roomTypes.forEach(function(roomType) {
+    let tempRoom = null;
+    roomData.forEach(function(roomType) {
         roomType.rooms.forEach(function(r){
-          if(r.id === roomId) return r;
+          if(r.id == roomId)
+            tempRoom = r;
         });
     });
-    return {};
+
+    return tempRoom;
   }
 
   openRoomModal(roomId) {
-
-    let room = getRoomFromData(roomId);
-    alert(JSON.stringify(room));
-    this.setState({ showModal: true, currentRoom: room, modalTitle: room.name });
+    const room = this.getRoomFromData(this.props.roomTypes, roomId);
+    if(!room) return;
+    //alert(JSON.stringify(room));
+    this.setState({ showModal: true, currentRoom: room, modalTitle: room.name, modalType: 'roomDetail'});
   }
 
   handleInputChange(event) {
@@ -80,7 +83,19 @@ class HotelRoomTypeListComponent extends React.Component {
       </li>
     );
 
-    const roomTypeModalBody = <div>ROOM TYPE DETAIL: {this.state.currentRoomType.id}</div>
+    const roomTypeModalBody = <RoomTypeDetailComponent roomType = {this.state.currentRoomType}/>
+    const roomModalBody = <RoomDetailComponent room = {this.state.currentRoom}/>
+    let modalBody = {};
+    switch (this.state.modalType) {
+      case 'roomTypeDetail':
+        modalBody = roomTypeModalBody;
+        break;
+        case 'roomDetail':
+          modalBody = roomModalBody;
+          break;
+      default:
+        modalBody = roomTypeModalBody;
+    }
 
     const modal =
       <Modal show={this.state.showModal} onHide={this.handleCancel}>
@@ -89,7 +104,7 @@ class HotelRoomTypeListComponent extends React.Component {
         </Modal.Header>
         <Modal.Body>
           <div>
-            {roomTypeModalBody}
+            {modalBody}
           </div>
         </Modal.Body>
       </Modal>

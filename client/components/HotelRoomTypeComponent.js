@@ -24,7 +24,7 @@ class HotelRoomTypeComponent extends React.Component {
             <div className='name'>{roomType.name}</div>
             <div>
               <span className='facility'>
-                200 sqft
+                {roomType.max_sqft} sqft
               </span>
               <span className='facility'>
                 {roomType.bed_type} {roomType.bed_number > 1 ? ' x ' + roomType.bed_number : ''}

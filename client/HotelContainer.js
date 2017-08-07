@@ -127,9 +127,15 @@ const roomTypes = [
     photo: 'https://dimg04.c-ctrip.com/images/hotel/373000/372135/149c35a32f034f18893ba2c5b1bad047_C_130_130_Q50.jpg',
     bed_type: 'queen',
     bed_number: 2,
+    can_add_bed: true,
+    is_include_breakfast: true,
+    is_no_smoking: false,
+
     currency: 'USD', currency_symbel: '$',
     price: 200,
-    sqft: 180,
+    min_sqft: 180,
+    max_sqft: 200,
+    fits: 2,
     floors :[1, 4, 15],
     // ...
     rooms: rooms1
@@ -140,10 +146,17 @@ const roomTypes = [
     photo: 'https://dimg04.c-ctrip.com/images/hotel/373000/372135/0dbac627e8fb47ffb8fb8c3d45430946_C_130_130_Q50.jpg',
     bed_type: 'king',
     bed_number: 1,
+    can_add_bed: true,
+    is_include_breakfast: true,
+    is_no_smoking: false,
+
     currency: 'USD', currency_symbel: '$',
 
     price: 210,
-    sqft: 220,
+    min_sqft: 180,
+    max_sqft: 200,
+
+    fits: 2,
     floors :[2,9],
     // ...
     rooms: rooms2
@@ -154,9 +167,15 @@ const roomTypes = [
     photo: 'https://dimg04.c-ctrip.com/images/200j0f0000007b0zfFDAA_C_130_130_Q50.jpg',
     bed_type: 'king',
     bed_number: 1,
+    can_add_bed: true,
+    is_include_breakfast: true,
+    is_no_smoking: false,
+
     currency: 'USD', currency_symbel: '$',
     price: 280,
-    sqft: 260,
+    min_sqft: 180,
+    max_sqft: 200,
+    fits: 2,
     floors :[3, 18],
     // ...
     rooms: rooms3
