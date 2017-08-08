@@ -9,7 +9,7 @@ class MiniSliderComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.showSlides(this.state.slideIndex);
+    //this.showSlides(this.state.slideIndex);
   }
 
  // showSlides(n) {
@@ -29,50 +29,73 @@ class MiniSliderComponent extends React.Component {
  //  }
 
   plusSlides(n) {
-    const tempSlideIndex = this.state.slideIndex + n;
-    this.setState({slideIndex: tempSlideIndex});
-    //this.showSlides(tempSlideIndex);
+    const photosCount = this.props.photos.length;
+
+    let tempIndex = this.state.slideIndex + n;
+    if(tempIndex < 0)
+      tempIndex = photosCount - 1;
+    if(tempIndex >= photosCount)
+      tempIndex = 0;
+
+    this.setState({slideIndex: tempIndex});
   }
 
   currentSlide(n) {
     this.setState({slideIndex: n});
-    //this.showSlides(n);
+  }
+
+  getSlideClasses(index, currentSlideIndex){
+    return classNames({
+      'slide': true,
+      //'fade': true,
+      'active': currentSlideIndex === index,
+      'inactive': currentSlideIndex != index,
+    });
+  }
+
+  getDotClasses(index, currentSlideIndex){
+    return classNames({
+      'dot': true,
+      'active': currentSlideIndex === index,
+      'inactive': currentSlideIndex != index,
+    });
   }
 
   render() {
     const photos = this.props.photos;
     const photosCount = photos.length;
-    const photosComponent = this.props.photos.map((photo, index) =>
-      let slideClasses = classNames({
-        'mySlides': true,
-        'fade': true,
-        'active': this.state.slideIndex === index,
-        'inactive': this.state.slideIndex != index,
-      });
 
-      <div key={photo.url} className="mySlides fade">
-        <div className="numbertext">{index} / {photosCount}</div>
-        <img src={photo.url} style="width:100%">
-        <div className="text">{photo.title}</div>
+    const self = this;
+
+    const photosComponent = this.props.photos.map((photo, index) =>
+      <div key={photo.url} className={self.getSlideClasses(index, self.state.slideIndex)}>
+        <img src={photo.url}/>
+        <div className="caption">{photo.title}</div>
       </div>
     );
 
     const dotsComponent = this.props.photos.map((photo, index) =>
-      <span key={index} className="dot" onClick={() => this.currentSlide(index)}></span>
+      <span key={index} className={self.getDotClasses(index, self.state.slideIndex)} onClick={() => this.currentSlide(index)}></span>
     );
 
     return (
-
       <div className="slideshow-container">
-        {photosComponent}
 
-        <a className="prev" onClick={() => this.plusSlides(-1)}>&#10094;</a>
-        <a className="next" onClick={() => this.plusSlides(1)}>&#10095;</a>
-      </div>
-      <br>
+        <div className='slides'>
+          {photosComponent}
+        </div>
 
-      <div className='dots-container'>
-        {dotsComponent}
+        <div className="slide-index">{this.state.slideIndex + 1} / {photosCount}</div>
+
+        <div className='controls'>
+          <a className="prev" onClick={() => this.plusSlides(-1)}>&#10094;</a>
+          <a className="next" onClick={() => this.plusSlides(1)}>&#10095;</a>
+        </div>
+
+        <div className='dots'>
+          {dotsComponent}
+        </div>
+
       </div>
 
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+import MiniSliderComponent from './MiniSliderComponent';
 
 class RoomTypeDetailComponent extends React.Component {
   constructor(props) {
@@ -10,8 +11,7 @@ class RoomTypeDetailComponent extends React.Component {
     return (
 
       <div id={'room-type-detail-'+roomType.id} className="room-type-detail">
-        <div className='photo-slider'>
-        </div>
+        <MiniSliderComponent photos = {roomType.photos} />
 
         <div><span>Sqft</span> {roomType.min_sqft} - {roomType.max_sqft}</div>
         <div><span>Fits</span> {roomType.fits} people</div>

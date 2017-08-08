@@ -19,7 +19,7 @@ const rooms1 = [
     isPrepayment: true,
     isIncludeBreakfast: true,
 
-    // detail info
+
 
   },
   {
@@ -125,6 +125,24 @@ const roomTypes = [
     id: 'rt_001',
     name: 'room type 001',
     photo: 'https://dimg04.c-ctrip.com/images/hotel/373000/372135/149c35a32f034f18893ba2c5b1bad047_C_130_130_Q50.jpg',
+    photos: [
+      {
+        url: 'https://dimg04.c-ctrip.com/images/200j0f0000007b0zfFDAA_C_550_412_Q50.jpg',
+        title: 'room 1'
+      },
+      {
+        url: 'https://dimg04.c-ctrip.com/images/20050f0000007ksv1DD7A_C_550_412_Q50.jpg',
+        title: 'room 2'
+      },
+      {
+        url: 'https://dimg04.c-ctrip.com/images/200u0f0000007ej6eD476_C_550_412_Q50.jpg',
+        title: 'room 3'
+      },
+      {
+        url: 'https://dimg04.c-ctrip.com/images/20030f0000007ek2oF079_C_550_412_Q50.jpg',
+        title: 'room 4'
+      }
+    ],
     bed_type: 'queen',
     bed_number: 2,
     can_add_bed: true,
@@ -143,7 +161,7 @@ const roomTypes = [
   {
     id: 'rt_002',
     name: 'room type 002',
-    photo: 'https://dimg04.c-ctrip.com/images/hotel/373000/372135/0dbac627e8fb47ffb8fb8c3d45430946_C_130_130_Q50.jpg',
+    photo: 'https://dimg04.c-ctrip.com/images/20050f0000007ksv1DD7A_C_550_412_Q50.jpg',
     bed_type: 'king',
     bed_number: 1,
     can_add_bed: true,
