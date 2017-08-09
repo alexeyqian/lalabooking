@@ -270,8 +270,8 @@ textarea {
     text-align: center; }
   .slideshow-container .dot {
     cursor: pointer;
-    height: 13px;
-    width: 13px;
+    height: 16px;
+    width: 16px;
     margin: 0 2px;
     background-color: #bbb;
     display: inline-block;

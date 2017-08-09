@@ -10,6 +10,9 @@ var config = {
         home: [APP_DIR + '/HomeContainer.js'],
         search: [APP_DIR + '/SearchContainer.js'],
         hotel: [APP_DIR + '/HotelContainer.js'],
+        bookInputCustomerInfo: [APP_DIR + '/BookInputCustomerInfoContainer.js'],
+        bookInputPaymentInfo: [APP_DIR + '/BookInputPaymentInfoContainer.js'],
+        bookConfirmBooking: [APP_DIR + '/BookConfirmBookingContainer.js'],
         test: [APP_DIR + '/TestContainer.js'],
         //search: [APP_DIR + '/CityAndDate.js', APP_DIR + '/FilterButtonMobileContainer.js']
     },

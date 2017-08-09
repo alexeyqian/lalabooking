@@ -5,6 +5,7 @@ const AccountController = require('./controllers/AccountController');
 const SearchController = require('./controllers/SearchController');
 const SearchByMapController = require('./controllers/SearchByMapController');
 const HotelController = require('./controllers/HotelController');
+const BookController = require('./controllers/BookController');
 const TestController = require('./controllers/TestController');
 
 const auth = passport.authenticate('local', {
@@ -46,6 +47,9 @@ publicRouter
     .get('/searchbymap/:country/:city', SearchByMapController.index)
     .get('/searchbymap/:country/:state/:city', SearchByMapController.index)
     .get('/hotel/:id', HotelController.index)
+    .get('/book/step1', BookController.inputCustomerInfo)
+    .get('/book/step2', BookController.inputPaymentInfo)
+    .get('/book/step3', BookController.confirmBooking)
     .get('/test', TestController.index);
 
 // Secured routes
