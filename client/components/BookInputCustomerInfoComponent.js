@@ -1,4 +1,5 @@
 import React from 'react';
+import MiniStepsBarComponent from './MiniStepsBarComponent';
 
 class BookInputCustomerInfoComponent extends React.Component {
   constructor(props) {
@@ -6,33 +7,45 @@ class BookInputCustomerInfoComponent extends React.Component {
   }
 
   render() {
-
+    let stepsData = {
+      currentIndex: 0,
+      steps: [
+        {text: 'first step'},
+        {text: 'second step'},
+        {text: 'last step'},
+      ]
+    };
     return (
+      <div>
 
-      <div id='book-customer-info' className="book-customer-info">
+      <MiniStepsBarComponent stepsData = {stepsData} />
+
+      <div id='book-input-customer-info' className="book-input-customer-info">
 
         <form>
           <div className="form-group">
-            <label for="email">Email</label>
-            <input type="email" className="form-control" id="email" placeholder="Email">
+            <label htmlFor="email">Email</label>
+            <input type="email" className="form-control" id="email" placeholder="Email" />
           </div>
           <div className="form-group">
-            <label for="firstName">First Name</label>
-            <input type="text" className="form-control" id="firstName" placeholder="First Name">
+            <label htmlFor="firstName">First Name</label>
+            <input type="text" className="form-control" id="firstName" placeholder="First Name" />
           </div>
           <div className="form-group">
-            <label for="lastName">Last Name</label>
-            <input type="text" className="form-control" id="lastName" placeholder="Last Name">
+            <label htmlFor="lastName">Last Name</label>
+            <input type="text" className="form-control" id="lastName" placeholder="Last Name" />
           </div>
 
           <div className="checkbox">
             <label>
-              <input type="checkbox"> Checkbox
+              <input type="checkbox"/> Checkbox
             </label>
           </div>
 
           <button type="submit" className="btn btn-default">Submit</button>
           </form>
+
+      </div>
 
       </div>
 

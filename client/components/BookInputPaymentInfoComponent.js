@@ -9,26 +9,27 @@ class BookInputPaymentInfoComponent extends React.Component {
 
     return (
 
-      <div id='book-customer-info' className="book-customer-info">
+      <div id='book-input-payment-info' className="book-input-payment-info">
 
         <form>
           <div className="form-group">
-            <label for="email">Email</label>
-            <input type="email" className="form-control" id="email" placeholder="Email">
+            <label htmlFor="name">Name on Card</label>
+            <input type="text" className="form-control" id="name" placeholder="Name on Card" />
           </div>
           <div className="form-group">
-            <label for="firstName">First Name</label>
-            <input type="text" className="form-control" id="firstName" placeholder="First Name">
-          </div>
-          <div className="form-group">
-            <label for="lastName">Last Name</label>
-            <input type="text" className="form-control" id="lastName" placeholder="Last Name">
+            <label htmlFor="cardNumber">Card Number</label>
+            <input type="text" className="form-control" id="cardNumber" placeholder="Card Number" />
           </div>
 
-          <div className="checkbox">
-            <label>
-              <input type="checkbox"> Checkbox
-            </label>
+          <div className="form-group">
+            <label htmlFor="expirationDate">Expiration Date</label>
+            <input type="text" className="form-control" id="expirationMonth" placeholder="Month" />
+            <input type="text" className="form-control" id="expirationYear" placeholder="Year" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="securityCode">Security Code</label>
+            <input type="text" className="form-control" id="securityCode" placeholder="Security Code" />
           </div>
 
           <button type="submit" className="btn btn-default">Submit</button>
