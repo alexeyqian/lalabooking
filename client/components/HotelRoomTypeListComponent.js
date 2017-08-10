@@ -5,6 +5,7 @@ import HotelRoomTypeComponent from './HotelRoomTypeComponent';
 import HotelRoomListComponent from './HotelRoomListComponent';
 import RoomTypeDetailComponent from './RoomTypeDetailComponent';
 import RoomDetailComponent from './RoomDetailComponent';
+import MiniExpandableComponent from './MiniExpandableComponent';
 
 class HotelRoomTypeListComponent extends React.Component {
   constructor(props) {
@@ -75,13 +76,17 @@ class HotelRoomTypeListComponent extends React.Component {
   }
 
   render() {
+    //const self = this;
+    const roomTypeComponentList = this.props.roomTypes.map((roomType) => {
 
-    const roomTypeComponentList = this.props.roomTypes.map((roomType) =>
+      let aComponent = <div><HotelRoomTypeComponent roomType={roomType} onShowDetail={this.openRoomTypeModal} /></div>;
+      let bComponent = <HotelRoomListComponent rooms = {roomType.rooms}  onShowDetail={this.openRoomModal}  />;
+      return (
       <li key={roomType.id} className='hotel-room-type-wrapper'>
-        <div><HotelRoomTypeComponent roomType={roomType} onShowDetail={this.openRoomTypeModal} /></div>
-        <HotelRoomListComponent rooms = {roomType.rooms}  onShowDetail={this.openRoomModal}  />
+        <MiniExpandableComponent a = {aComponent} b = {bComponent}/>
       </li>
-    );
+      );
+    });
 
     const roomTypeModalBody = <RoomTypeDetailComponent roomType = {this.state.currentRoomType}/>
     const roomModalBody = <RoomDetailComponent room = {this.state.currentRoom}/>

@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-class MiniABComponent extends React.Component {
+class MiniExpandableComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {isB: false};
@@ -14,7 +14,7 @@ class MiniABComponent extends React.Component {
   render() {
     const aClasses = classNames({
       'a': true,
-      'active': !this.state.isB
+      'active': true
     });
 
     const bClasses = classNames({
@@ -22,16 +22,12 @@ class MiniABComponent extends React.Component {
       'active': this.state.isB
     });
 
-    // let arrow = '▼';
-    // if(this.state.isB)
-    //   arrow = '▲';
-
     let arrow = <i className='fa fa-chevron-down'></i>;
     if(this.state.isB)
       arrow = <i className='fa fa-chevron-up'></i>;
 
     return (
-      <div className='mini-ab-container'>
+      <div className='mini-expandable-container'>
         <div className='arrow' onClick={() => this.toggleB()}>{arrow}</div>
         <div className={aClasses}>{this.props.a}</div>
         <div className={bClasses}>{this.props.b}</div>
@@ -40,4 +36,4 @@ class MiniABComponent extends React.Component {
     );
   }
 }
-export default MiniABComponent;
+export default MiniExpandableComponent;
