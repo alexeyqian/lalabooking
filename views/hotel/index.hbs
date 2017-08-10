@@ -1,27 +1,30 @@
-<h1 class='h4'>{{hotel.name}}</h1>
 
-<div>
-  <i class="fa fa-map-marker"></i>
-  {{hotel.address}}
+<div class='container-fluid'>
+  <h1 class='h4'>{{hotel.name}}</h1>
+
+  <div>
+    <i class="fa fa-map-marker"></i>
+    {{hotel.address}}
+  </div>
+
+  <div id='hotelPhotoSliderComponent'></div>
+
+  <div id='hotelDescriptionComponent'></div>
+
+  <!-- <div class="short-full-block">
+    <div class="short-block">short text</div>
+    <div class="full-block hidden">full text</div>
+  </div> -->
+
+  <div id='hotelRoomTypeListComponent'></div>
 </div>
-
-<div id='hotelPhotoSliderComponent'></div>
-
-<div>{{hotel.description}}</div>
-
-<div class="short-full-block">
-  <div class="short-block">short text</div>
-  <div class="full-block hidden">full text</div>
-</div>
-
-<div id='hotelRoomTypeListComponent'></div>
+<script>
+  window.shortDescription = '{{hotel.shortDescription}}';
+  window.longDescription = '{{hotel.description}}';
+</script>
 
 {{#contentFor "footerScripts"}}
 
 <script src="/js/hotel.js"></script>
-<script>
-$(function(){
-  initShortFullBlock();
-});
-</script>
+
 {{/contentFor}}

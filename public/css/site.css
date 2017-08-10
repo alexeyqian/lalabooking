@@ -335,6 +335,19 @@ textarea {
       .mini-steps-bar-container li.active a:after {
         border-left-color: #368cd7; }
 
+.mini-ab-container {
+  position: relative;
+  padding-right: 25px; }
+  .mini-ab-container .arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px; }
+  .mini-ab-container .a, .mini-ab-container .b {
+    display: none; }
+  .mini-ab-container .a.active, .mini-ab-container .b.active {
+    display: block; }
+
 /* Common Styles*/
 * {
   -webkit-border-radius: 0 !important;

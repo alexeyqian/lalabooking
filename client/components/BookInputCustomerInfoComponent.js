@@ -10,9 +10,9 @@ class BookInputCustomerInfoComponent extends React.Component {
     let stepsData = {
       currentIndex: 0,
       steps: [
-        {text: 'first step'},
-        {text: 'second step'},
-        {text: 'last step'},
+        {text: '1. Customer'},
+        {text: '2. Payment'},
+        {text: '3. Confirm'},
       ]
     };
     return (

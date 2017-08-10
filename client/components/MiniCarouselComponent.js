@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-class MiniSliderComponent extends React.Component {
+class MiniCarouselComponent extends React.Component {
   constructor(props) {
     super(props);
 
@@ -101,4 +101,4 @@ class MiniSliderComponent extends React.Component {
     );
   }
 }
-export default MiniSliderComponent;
+export default MiniCarouselComponent;

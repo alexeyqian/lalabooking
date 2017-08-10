@@ -1,0 +1,15 @@
+.mini-ab-container{
+
+  position: relative;;
+  padding-right: 25px;
+
+  .arrow{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+  }
+
+  .a, .b {display: none;}
+  .a.active, .b.active{display: block;}
+}

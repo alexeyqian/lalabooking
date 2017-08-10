@@ -2,6 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import HotelPhotoSliderComponent from './components/HotelPhotoSliderComponent';
 import HotelRoomTypeListComponent from './components/HotelRoomTypeListComponent';
+import MiniABComponent from './components/MiniABComponent';
 
 const rooms1 = [
   {
@@ -201,8 +202,13 @@ const roomTypes = [
 ];
 
 const hotel = {
+  shortDescription: 'Short description',
+  description: 'this is logn description',
   roomTypes: roomTypes
 };
 
+const shortDescription = <div>{window.shortDescription}</div>;
+const longDescription = <div>{window.longDescription}</div>;
 render(<HotelPhotoSliderComponent/>, document.getElementById('hotelPhotoSliderComponent'));
+render(<MiniABComponent a={shortDescription} b={longDescription}/>, document.getElementById('hotelDescriptionComponent'));
 render(<HotelRoomTypeListComponent roomTypes = {hotel.roomTypes}/>, document.getElementById('hotelRoomTypeListComponent'));

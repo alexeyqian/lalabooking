@@ -1,5 +1,5 @@
 import React from 'react';
-import MiniSliderComponent from './MiniSliderComponent';
+import MiniCarouselComponent from './MiniCarouselComponent';
 
 class RoomTypeDetailComponent extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class RoomTypeDetailComponent extends React.Component {
     return (
 
       <div id={'room-type-detail-'+roomType.id} className="room-type-detail">
-        <MiniSliderComponent photos = {roomType.photos} />
+        <MiniCarouselComponent photos = {roomType.photos} />
 
         <div><span>Sqft</span> {roomType.min_sqft} - {roomType.max_sqft}</div>
         <div><span>Fits</span> {roomType.fits} people</div>
