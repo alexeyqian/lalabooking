@@ -2,14 +2,14 @@ const Koa = require('koa');
 
 const send = require('koa-send');
 const serve = require('koa-static');
-const router = require('./router');
 const hbs = require('koa-hbs');
 const bodyParser = require('koa-bodyparser');
 const session = require('koa-session');
 const CSRF = require('koa-csrf');
-const passport = require('./auth');
 const mongoose = require('mongoose');
 
+const router = require('./router');
+const passport = require('./auth');
 const configs require('./configs');
 
 const app = module.exports = new Koa();
