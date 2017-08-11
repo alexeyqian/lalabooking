@@ -8,11 +8,11 @@ const session = require('koa-session');
 const CSRF = require('koa-csrf');
 const mongoose = require('mongoose');
 
-const router = require('../src/router');
-const passport = require('../src/auth');
-const config require('../config');
+const router = require('./router');
+const passport = require('./auth');
+const config require('../../config');
 
-const app = module.exports = new Koa();
+const app = new Koa();
 app.on('error', function(err){
     console.error(err.stack);
     console.log(err.message);
@@ -72,4 +72,6 @@ process.on('SIGINT', function() {
     });
 });
 
-if (!module.parent) app.listen(3000);
+ //module.exports =
+ export default app;
+//if (!module.parent) app.listen(3000);
