@@ -72,6 +72,6 @@ process.on('SIGINT', function() {
     });
 });
 
- //module.exports =
- export default app;
+ module.exports = app;
+ //export default app;
 //if (!module.parent) app.listen(3000);
