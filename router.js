@@ -48,8 +48,11 @@ publicRouter
     .get('/searchbymap/:country/:state/:city', SearchByMapController.index)
     .get('/hotel/:id', HotelController.index)
     .get('/book/step1', BookController.inputCustomerInfo)
+    .post('/book/saveCustomerInfo', BookController.saveCustomerInfo)
     .get('/book/step2', BookController.inputPaymentInfo)
+    //.post('/book/savePaymentInfo', BookController.savePaymentInfo)
     .get('/book/step3', BookController.confirmBooking)
+    //.post('/book/confirmBooking', BookController.confirmBooking)
     .get('/test', TestController.index);
 
 // Secured routes

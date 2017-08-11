@@ -15,6 +15,7 @@ class BookInputCustomerInfoComponent extends React.Component {
         {text: '3. Confirm'},
       ]
     };
+    const csrf = window.csrf;
     return (
       <div>
 
@@ -22,18 +23,20 @@ class BookInputCustomerInfoComponent extends React.Component {
 
       <div id='book-input-customer-info' className="book-input-customer-info">
 
-        <form>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input type="email" className="form-control" id="email" placeholder="Email" />
-          </div>
+        <form method='POST' action='/book/saveCustomerInfo'>
+          <input type="hidden" name="_csrf" value={csrf}/>
           <div className="form-group">
             <label htmlFor="firstName">First Name</label>
-            <input type="text" className="form-control" id="firstName" placeholder="First Name" />
+            <input type="text" className="form-control" id="firstName" name="firstName" placeholder="First Name" />
           </div>
           <div className="form-group">
             <label htmlFor="lastName">Last Name</label>
-            <input type="text" className="form-control" id="lastName" placeholder="Last Name" />
+            <input type="text" className="form-control" id="lastName" name="lastName" placeholder="Last Name" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input type="email" className="form-control" id="email" name="email" placeholder="Email" />
           </div>
 
           <div className="checkbox">

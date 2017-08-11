@@ -1,7 +1,12 @@
 
+{{#if errors}}
+    <div class="alert alert-danger">{{errors}}</div>
+{{/if}}
 
 <div id='inputCustomerInfoComponent'></div>
-
+<script>
+  window.csrf = '{{csrf}}';
+</script>
 {{#contentFor "footerScripts"}}
 
 <script src="/js/bookInputCustomerInfo.js"></script>
