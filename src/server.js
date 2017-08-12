@@ -8,9 +8,9 @@ const session = require('koa-session');
 const CSRF = require('koa-csrf');
 const mongoose = require('mongoose');
 
+const config = require('../config');
 const router = require('./router');
 const passport = require('./auth');
-const config require('../../config');
 
 const app = new Koa();
 app.on('error', function(err){
@@ -49,9 +49,11 @@ app.use(hbs.middleware({
 
 app.use(router.publicRouter.middleware());
 app.use(router.securedRouter.middleware());
-app.use(serve(__dirname + '/public'));
 
-mongoose.connect(config.database, { /*config: { autoIndex: false }*/ });
+console.log('dirname:'+__dirname);
+app.use(serve('./public'));
+
+mongoose.connect(config.database);
 
 mongoose.connection.on('connected', function () {
     console.log('Mongoose default connection open to ' + configs.dbUrl);

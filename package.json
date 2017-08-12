@@ -4,9 +4,12 @@
   "description": "Booking hotels in china",
   "main": "index.js",
   "scripts": {
+    "cwatch": "webpack -d --watch",
+    "cbuild": "webpack -p",
     "ctest": "test",
-    "cdev": "webpack -d --watch",
-    "cbuild": "webpack -p"
+    "watch": "nodemon index.js",
+    "build": "",
+    "test": ""
   },
   "author": "Alexey Qian",
   "license": "ISC",

@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   session: 'secret-boilerplate-token',
   token: 'secret-jwt-token',
   database: 'mongodb://alexey:Paw%40123'
