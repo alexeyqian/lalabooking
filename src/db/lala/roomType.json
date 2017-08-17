@@ -1,0 +1,42 @@
+{
+  "fid": "RT001",
+  "hotel_id": "object id",
+  "hotel_fid": "L86210000001",
+  "name": "xxx",
+
+  "price_currency": "USD",
+  "price_min": 245,
+  "price_max": 678,
+
+  "sqft_min": 123,
+  "sqft_max": 156,
+
+  "bed_type": "king",
+  "bed_count": 1,
+  "can_add_bed": true,
+  "include_breakfast": true,
+
+  "free_wifi": true,
+  "free_cancellation": true,
+  "cancellation_rule": "xxx",
+  "no_payment_needed": false,
+  "pay_at": "",
+
+  "fits": 3,
+  "floors": ["G", "3", "5", "16"],
+  "photo_default": "",
+  "photos": [
+    {
+      "url": "xxx",
+      "title": "xxx",
+      "display_order": 1
+    }
+  ],
+  "facilities": ["a","b"],
+
+  "display_order": 1,
+  "description": "xxx",
+  "other_info": {
+    "xx": "yy",
+  },
+}

@@ -1,0 +1,41 @@
+{
+  "fid": "R001",
+  "room_number": "R2046",
+  "room_type_id": "object id",
+  "room_type_fid": "RT001",
+  "hotel_id": "object id",
+  "hotel_fid": "L86210000001",
+  "name": "xxx",
+
+  "price_currency": "USD",
+  "price": 245,
+
+  "sqft": 125,
+  "bed_type": "king",
+  "bed_count": 1,
+  "can_add_bed": true,
+
+  "free_wifi": true,
+  "free_cancellation": true,
+  "prepayment": false,
+  "pay_at": "",
+  "include_breakfast": true,
+
+  "fits": 3,
+  "floor": "4",
+  "photo_default": "",
+  "photos": [
+    {
+      "url": "xxx",
+      "title": "xxx",
+      "display_order": 1
+    }
+  ],
+  "facilities": ["a","b"],
+
+  "display_order": 1,
+  "description": "xxx",
+  "other_info": {
+    "xx": "yy",
+  },
+}

@@ -1,0 +1,90 @@
+{
+  "COMMENT": "make searchable field as simple/flat for performance",
+
+  "fid": "L86210000001",
+  "name": "Merry Hotel Shanghai (Former Rendezvous Merry Hotel Shanghai",
+
+  "price_min": 200,
+  "price_max": 999,
+  "price_currency": "USD",
+
+  "addr_street1": "No. 396 Yan'an West Road",
+  "addr_street2": "Jing'an",
+  "addr_district": "Shanghai",
+  "addr_city": "Shanghai",
+  "addr_state": "Shanghai",
+  "addr_zipcode": "200241",
+  "addr_country": "China",
+  "addr_formated": "No. 396 Yan'an West Road, Jing'an District, Shanghai, China",
+  "latitude": 45.34343432,
+  "longitude": -97.2123084,
+
+  "photo_default": "xxxx",
+  "photos": [
+    {
+      "url": "",
+      "title": "",
+      "display_order": 1
+    },
+    {
+      "url": "",
+      "title": "",
+      "display_order": 2
+    },
+
+  ],
+
+  "description": "xxxxxxxxxxxxxxxxxxxxx",
+  "telephone": "86.21.34463",
+
+  "stars": 4.5,
+  "chain": "merry_hotel",
+  "category": "luxury",
+  "themes": ["a","b"],
+
+  "facilities": [
+    "free_wifi", "free_parking", "paying_parking", "pets_allowed",
+    "no_smoking_rooms", "family_rooms", "bar", "fitness_center", "business_center",
+    "conference_room", "medical_support", "baby_care", "wake_up_calls", "laundry_service",
+    "room_service", "tourism_service", "car_rental_service","currency_exchange", "game_room"
+  ],
+
+  "room_facilities": [
+    "air_conditioning", "private_bathroom", "flat_screen_tv", "tea_coffee_maker", "hairdryer", "towels"
+  ],
+
+  "policies": {
+    "checkin": "from 3:00pm",
+    "checkout": "until 12:00pm",
+    "free_cancellation": true,
+    "cancellation_rule": "free before 24 hours",
+    "no_payment_needed": true,
+    "pay_at": "pay at front desk",
+    "children_and_extra_bed": "Any additional children or adults are charged USD 10 per person per night when using existing beds.",
+    "pets_allowed": true,
+    "accepted_credit_cards": "visa, master, discover"
+  },
+
+  "other_info": "xxxxxxxxxxxxxxxxxxxx",
+
+  "distances":[
+    {
+      "poi": "Jing""an Temple",
+      "distance": 1,
+      "unit": "km",
+      "type": "torrust"
+    },
+    {
+      "poi": "Shanghai Exhibition Center",
+      "distance": 2,
+      "unit": "km",
+      "type": "shopping_center, hospital, univercity, subway, district, etc."
+    }
+  ],
+
+  "revew_count": 748,
+  "review_score": 8.8,
+  "location_score": 9.0,
+  "favorited_count": 33421,
+  "recommended_count": 4564,
+}
