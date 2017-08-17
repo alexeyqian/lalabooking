@@ -9,6 +9,9 @@ var hotelSchema = new Schema({
 	location: String,
 
 	description: String,
+
+	facilities: Array,
+
 	created_by: {type: String, required: true},
 	created_at: Date,
 	updated_at: Date
