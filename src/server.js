@@ -50,13 +50,13 @@ app.use(hbs.middleware({
 app.use(router.publicRouter.middleware());
 app.use(router.securedRouter.middleware());
 
-console.log('dirname:'+__dirname);
+//console.log('dirname:'+__dirname);
 app.use(serve('./public'));
-
+//console.log(config);
 mongoose.connect(config.database);
 
 mongoose.connection.on('connected', function () {
-    console.log('Mongoose default connection open to ' + configs.dbUrl);
+    console.log('Mongoose default connection open to ' + config.dbUrl);
 });
 
 mongoose.connection.on('error',function (err) {
