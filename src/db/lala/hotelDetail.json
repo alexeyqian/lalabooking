@@ -1,8 +1,6 @@
 {
-  "COMMENT": "make searchable field as simple/flat for performance",
-
   "fid": "L86210000001",
-  "name": "Merry Hotel Shanghai (Former Rendezvous Merry Hotel Shanghai",
+  "name": "Merry Hotel Shanghai",
 
   "price_min": 200,
   "price_max": 999,
@@ -16,22 +14,21 @@
   "addr_zipcode": "200241",
   "addr_country": "China",
   "addr_formated": "No. 396 Yan'an West Road, Jing'an District, Shanghai, China",
-  "latitude": 45.34343432,
-  "longitude": -97.2123084,
+  "latitude": 31.267401,
+  "longitude": 121.522179	,
 
-  "photo_default": "xxxx",
+  "photo_default": "http://pavo.elongstatic.com/i/Hotel795_325/0000ioub.jpg",
   "photos": [
     {
-      "url": "",
-      "title": "",
+      "url": "http://pavo.elongstatic.com/i/Hotel795_325/0000ioub.jpg",
+      "title": "image 1",
       "display_order": 1
     },
     {
-      "url": "",
-      "title": "",
+      "url": "http://pavo.elongstatic.com/i/Hotel795_325/00006TFx.jpg",
+      "title": "image 2",
       "display_order": 2
-    },
-
+    }
   ],
 
   "description": "xxxxxxxxxxxxxxxxxxxxx",
@@ -69,7 +66,7 @@
 
   "distances":[
     {
-      "poi": "Jing""an Temple",
+      "poi": "Jing'an Temple",
       "distance": 1,
       "unit": "km",
       "type": "torrust"
@@ -86,5 +83,5 @@
   "review_score": 8.8,
   "location_score": 9.0,
   "favorited_count": 33421,
-  "recommended_count": 4564,
+  "recommended_count": 4564
 }

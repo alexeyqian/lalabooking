@@ -16,7 +16,7 @@ var hotelSchema = new Schema({
   addr_city: {type: String, required: true},
   addr_state: {type: String, required: true},
   addr_zipcode: {type: String, required: true},
-  ddr_country: {type: String, required: true},
+  addr_country: {type: String, required: true},
   addr_formated: String,
   latitude: Number,
   longitude: Number,

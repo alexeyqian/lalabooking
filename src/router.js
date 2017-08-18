@@ -53,7 +53,8 @@ publicRouter
     //.post('/book/savePaymentInfo', BookController.savePaymentInfo)
     .get('/book/step3', BookController.confirmBooking)
     //.post('/book/confirmBooking', BookController.confirmBooking)
-    .get('/test', TestController.index);
+    .get('/test', TestController.index)
+    .get('/test/test1', TestController.test1);
 
 // Secured routes
 const securedRouter = new Router();
